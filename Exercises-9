@@ -1,0 +1,139 @@
+//QUESTION 1
+/*
+#include <stdio.h>
+void multiply(double a, double b);
+int main(void)
+{
+	double x,y;
+	printf("Enter a number: ");
+	scanf("%lf",&x);
+	printf("Enter a number: ");
+	scanf("%lf",&y);
+	multiply(x,y);
+	return 0;
+}
+void multiply(double a, double b)
+{
+	double result;
+	result=a*b;
+	printf("Result: %.2lf\n",result);
+}
+*/
+//QUESTION 2
+/*
+#include <stdio.h>
+int sumofsquares(int a);
+int squareofsum(int x);
+int main(void)
+{
+	int number,count,soq,sos;
+	for(count=0;count<10;count++)
+	{
+		printf("Enter a natural number: ");
+		scanf("%d",&number);
+		soq=sumofsquares(number);
+		sos=squareofsum(number);
+		printf("The sum of the squares of the first %d natural numbers is: %d\n",number,soq);
+		printf("The square of the sum of the first %d natural numbers is: %d\n",number,sos);
+
+	}
+	return 0;
+}
+int sumofsquares(int a)
+{
+	int count,sum=0;
+	for(count=1;count<=a;count++)
+		sum=sum+count*count;
+	return sum;
+}
+int squareofsum(int x)
+{
+	int count,result,sum=0;
+	for(count=1;count<=x;count++)
+		sum=sum+count;
+	result=sum*sum;
+	return result;
+}
+*/
+//QUESTION 3
+/*
+#include <stdio.h>
+void f1(int a);
+void f2(int b);
+void f3(int c);
+int main(void)
+{
+	char decide;
+	int N;
+	do {
+		printf("Enter an integer value: ");
+		scanf("%d",&N);
+		if(0<=N && N<=5)
+	      f2(N);
+		else if(5<N)
+		  f1(N);
+		else if(N<0)
+		  f3(N);
+		printf("Do you want to continue? (No: N or n)");
+		scanf(" %c",&decide);
+	   } while( decide != 'n' && decide != 'N' );
+	return 0;
+}
+void f1(int a)
+{
+	//Sum of N numbers
+	int count,sum=0;
+	for(count=1;count<=a;count++)
+		sum=sum+count;
+	printf("Sum of first %d integers is %d\n",a,sum);
+}
+void f2(int b)
+{
+	//Factorial
+	int count,result=1;
+	for(count=1;count<=b;count++)
+		result=result*count;
+	printf("%d! is %d\n",b,result);
+}
+void f3(int c)
+{
+	//Is is defined?
+	if ( c < 0 )
+		printf("Undefined\n");
+	else
+		printf("Defined\n");
+}
+*/
+//QUESTION 4
+/*
+#include <stdio.h>
+#include <math.h>
+int FindDigitDifference(int a,int b);
+int main(void)
+{
+	int difference,x,y;
+	printf("Enter the first number: ");
+	scanf("%d",&x);
+	printf("Enter the second number: ");
+	scanf("%d",&y);
+	difference=FindDigitDifference(x,y);
+	printf("Difference of number of digits is %d\n",difference);
+	return 0;
+}
+int FindDigitDifference(int aorg,int borg)
+{
+	int adn=0,bdn=0,difference;
+	while(aorg != 0)
+	{
+		aorg=aorg/10;
+		adn++;
+	}
+	while(borg != 0)
+	{
+		borg=borg/10;
+		bdn++;
+	}
+	difference=abs(bdn-adn);
+	return difference;
+}
+*/
